@@ -1,6 +1,8 @@
 #ifndef INGRESO_H_INCLUDED
 #define INGRESO_H_INCLUDED
 
+#include "fecha.h"
+
 class Ingreso{
     private:
     char marca[20];
@@ -13,6 +15,7 @@ class Ingreso{
     int telefono;
     float km;
     float importe;
+    Fecha fe;
 
     public:
         void cargarIngreso();

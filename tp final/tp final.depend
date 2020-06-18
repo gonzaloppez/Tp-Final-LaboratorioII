@@ -5,7 +5,7 @@
 
 1591810524 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\autos.h
 
-1591901697 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\main.cpp
+1592497298 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\main.cpp
 	<iostream>
 	<stdlib.h>
 	"marca.h"
@@ -13,40 +13,60 @@
 	"ingreso.h"
 	"funciones.h"
 
-1591848924 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.h
+1592411740 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.h
 	<iostream>
 	<stdlib.h>
 
-1591856131 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.cpp
+1592414387 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.cpp
 	<iostream>
 	<string.h>
 	<cstdio>
 	"marca.h"
 
-1591899078 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\menu.h
+1592497956 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\menu.h
 	<iostream>
 	<stdlib.h>
 	"marca.h"
 	"clave.h"
+	"clientes.h"
 
-1591854424 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.h
+1592417319 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.h
+	"fecha.h"
 
-1591854838 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.cpp
+1592496332 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.cpp
 	<iostream>
 	<cstdio>
 	<stdlib.h>
 	<string.h>
 	"ingreso.h"
+	"fecha.h"
 
 1591859363 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\funciones.h
 	<string.h>
 
 1591898962 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clave.h
 
-1591900899 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clave.cpp
+1592412814 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clave.cpp
 	<iostream>
 	<string.h>
 	<cstdio>
 	<stdlib.h>
 	"clave.h"
+
+1592413354 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\fecha.cpp
+	<iostream>
+	<stdlib.h>
+	<ctime>
+	"fecha.h"
+
+1592413401 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\fecha.h
+
+1592497956 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.h
+
+1592497161 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.cpp
+	<iostream>
+	<cstdio>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
 

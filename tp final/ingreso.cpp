@@ -4,9 +4,10 @@ using namespace std;
 #include <stdlib.h>
 #include <string.h>
 #include "ingreso.h"
-
+#include "fecha.h"
 
 bool Ingreso::buscarPatente(char *pat){
+
     system("cls");
     FILE *p;
     p = fopen("ingresos.dat","rb");
@@ -18,9 +19,10 @@ bool Ingreso::buscarPatente(char *pat){
             fclose(p);
             return true;
         }
-        }
-    fclose(p);
+    }
+     fclose(p);
     return false;
+
 }
 
 
@@ -36,6 +38,8 @@ void Ingreso::mostrarFichaCliente(){
     cout<<"TELEFONO: "<<telefono<<endl;
     cout<<"KM: "<<km<<endl;
     cout<<"IMPORTE: "<<importe<<endl;
+    cout<<"FECHA DE INGRESO AL TALLER: ";
+    fe.mostrar();
     system("pause");
     system("cls");
 }
@@ -51,6 +55,7 @@ bool Ingreso::guardarIngreso(){
 
 void Ingreso::cargarIngreso(){
     system("cls");
+
     cout<<"Ingresar Marca: ";
     cin.ignore();
     cin.getline(marca,20);
@@ -83,6 +88,9 @@ void Ingreso::cargarIngreso(){
     cout<<"Ingrese importe cobrado: $";
     cin>>importe;
     system("pause");
+
+    cout<<"Fecha de ingreso: ";
+    fe.cargar();
 
    }
 

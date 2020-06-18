@@ -6,6 +6,7 @@ using namespace std;
 #include "ingreso.h"
 #include "funciones.h"
 
+
 int main()
 {
     while(true){
@@ -28,8 +29,8 @@ int main()
         switch (opcion){
 
         case 1:
-            int opc;
             Ingreso alta;
+            int opc;
             alta.cargarIngreso();
             cout<<"Presione 1 para guardar ingreso : ";
             cin>>opc;
@@ -45,21 +46,24 @@ int main()
                     system("pause");
                 }
             }
-        break;
+break;
         case 2:
+
             char pat[7];
             cout<<"Ingrese patente para visualizar ficha del cliente: ";
             cin.ignore();
             cin.getline(pat,7);
             if(alta.buscarPatente(pat)==true){
                 alta.mostrarFichaCliente();
-            }else{
+            }
+            else{
                 cout<<"Patente no existe"<<endl;
                 system("pause");
             }
         break;
         case 3:
-
+            system("cls");
+            menuClientes();
         break;
         case 4:
             system("cls");

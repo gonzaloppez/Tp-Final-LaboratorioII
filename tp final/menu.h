@@ -5,6 +5,7 @@ using namespace std;
 #include <stdlib.h>
 #include "marca.h"
 #include "clave.h"
+#include "clientes.h"
 
 void menuConfiguracion(){
 
@@ -72,18 +73,16 @@ while(true){
        switch(opc){
 
         case 1:
+
             Marca m;
-            if(m.agregarMarca()==true){
-                if (m.guardarEnDiscoMarca()==true){
-                    cout<<"Se guardo en disco"<<endl;
-
-                    system("pause");
-
-                    }else{
-                        cout<<"El registro no se pudo guardar"<<endl;
-                        system("pause");
-                        }
-            }break;
+            if(m.cargarMarca())
+            {
+                if(m.guardarEnDiscoMarca()){
+                cout<<"Se agrego marca"<<endl;
+                system("pause");
+            }
+                            }
+            break;
         case 2:
             break;
         case 3:
@@ -103,6 +102,60 @@ void menuReportes(){
     cout<<"Bienvenido a la matrix"<<endl;
 system("pause");
 }
+
+void menuClientes(){
+
+while(true){
+    system("cls");
+    int opc;
+    cout<<"-MENU CLIENTES-"<<endl;
+    cout<<"*************************"<<endl;
+    cout<<" -1 Agregar Clientes  "<<endl;
+    cout<<" -2 Buscar Clientes  "<<endl;
+    cout<<" -3 Ver todos los clientes"<<endl;
+    cout<<" -0 Salir  "<<endl;
+    cout<<"*************************"<<endl;
+    cout<<"Ingrese una opcion: ";
+
+    cin>>opc;
+
+       switch(opc){
+
+        case 1:
+            Clientes clien;
+            if(clien.cargarCliente())
+                {
+                    if(clien.guardarEnDiscoClientes())
+                    {
+                        cout<<"Se guardo cliente en disco"<<endl;
+                        system("pause");
+                    }else{
+                        cout<<"No se pudo guardar registro en disco"<<endl;
+                    }
+                }else{
+                    cout<<"Error al ingresar alguno de los campos"<<endl;
+                    }
+            break;
+        case 2:
+            int dniBuscar;
+            cout<<"Ingrese DNI del cliente a buscar:";
+            cin>>dniBuscar;
+            clien.buscarClientesPorDni(dniBuscar);
+            break;
+        case 3:
+            cout<<"LISTADO DE CLIENTES"<<endl;
+            clien.leerClientesDeDisco();
+
+            break;
+        case 0:
+            return;
+            break;
+    }
+
+}
+
+}
+
 
  ///listarArchivoMarca();
     ///Marca m;

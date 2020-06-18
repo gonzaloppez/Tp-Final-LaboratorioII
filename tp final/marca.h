@@ -7,12 +7,13 @@ using namespace std;
 class Marca{
     private:
     char nombre[10];
+
     public:
-        bool agregarMarca();
+        bool cargarMarca();
         void mostrarMarca();
         bool guardarEnDiscoMarca();
         void leerDeDiscoMarca();
-        bool buscarMarca(char*);
+        bool buscarMarca(char *);
 };
 
 

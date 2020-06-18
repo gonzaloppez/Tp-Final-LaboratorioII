@@ -4,44 +4,38 @@ using namespace std;
 #include <cstdio>
 #include "marca.h"
 
-
 bool Marca::buscarMarca(char *nombreBuscado)
-{
+    {
 
-    int i=0;
+    Marca m;
     FILE *p;
     p = fopen("marcas.dat","rb");
-    if (p==NULL)
-        {
-            cout<<"No se pudo abrir archivo";
-            return -2;
-        }
-        while(fread(this,sizeof(Marca),1,p))
-        {
-        if (strcmp(nombreBuscado,nombre)==0)
+    if (p==NULL){return false;}
+    while(fread(&m,sizeof(Marca),1,p))
+    {
+        if (strcmp(nombreBuscado,m.nombre)==0)
         {
         fclose(p);
-        return i;
+        return true;
         }
-    i++;
-    }
-    fclose(p);
-    return -1;
-}
 
-bool Marca::agregarMarca(){
-    int i;
-    cin.ignore();
-    cout<<"Ingresar Nombre: ";
-    cin.getline(nombre,20);
-    cin.ignore();
-    i = buscarMarca(nombre);
-    if (i>=0)
-    {
-        cout<<"Marca ya existente"<<endl;
-        system("pause");
-        return false;
     }
+
+    fclose(p);
+    return false;
+
+    }
+
+bool Marca::cargarMarca(){
+    cout<<"Agregar Marca: ";
+    cin.ignore();
+    cin.getline(nombre,10);
+        if (buscarMarca(nombre))
+        {
+            cout<<"Marca ya existente"<<endl;
+            return false;
+        }
+
     return true;
 }
 
@@ -64,14 +58,13 @@ void Marca::leerDeDiscoMarca(){
     FILE *p;
     p = fopen("marcas.dat","rb");
     if (p==NULL){return;}
-    cout<<"Marcas disponibles:"<<endl;
     while(fread(this,sizeof(Marca),1,p))
     {
         cout<<endl;
         mostrarMarca();
-
-        }
+    }
     system("pause");
     fclose(p);
+
 }
 
