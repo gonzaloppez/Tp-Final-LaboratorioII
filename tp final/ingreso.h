@@ -1,30 +1,56 @@
 #ifndef INGRESO_H_INCLUDED
 #define INGRESO_H_INCLUDED
-
+#include "marca.h"
+#include "modelo.h"
+#include "clientes.h"
 #include "fecha.h"
 
-class Ingreso{
+
+class Auto{
     private:
-    char marca[20];
-    char modelo[20];
+    char marca[10];
+    char modelo[10];
     char combustible[10];
     char patente[7];
     char falla[50];
-    char nombreCliente[30];
     int dni;
-    int telefono;
+    Clientes cli;
     float km;
     float importe;
     Fecha fe;
 
     public:
-        void cargarIngreso();
+        ///SETS
+        void setMarca(char *);
+        void setModelo(char *);
+        void setCombustible(char *);
+        void setPatente(char *);
+        void setFalla(char *);
+        void setKm(float);
+        void setImporte(float);
+
+        ///GETS
+        char* getMarca();
+        char* getModelo();
+        char* getCombustible();
+        char* getPatente();
+        char* getFalla();
+
+
+        int getDni();
+        float getKm();
+        float getImporte();
+        Clientes getCliente();
+        bool cargarIngreso();
         bool guardarIngreso();
-        bool buscarPatente(char*);
-        void mostrarFichaCliente();
+        void mostrar();
+        bool leerDeDisco(int);
 
 
 };
 
+bool nuevoIngreso();
+void buscarIngreso();
+void buscarPatente(char*);
 
 #endif // INGRESO_H_INCLUDED
