@@ -2,89 +2,67 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="fecha.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="401" topLine="9" />
+		</Cursor>
+		<Folding>
+			<Collapse line="51" />
+		</Folding>
+	</File>
+	<File name="clientes.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="549" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="configuraciones.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2566" topLine="3" />
+		</Cursor>
+		<Folding>
+			<Collapse line="6" />
+			<Collapse line="25" />
+		</Folding>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="171" topLine="3" />
+		</Cursor>
+	</File>
 	<File name="funciones.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="85" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="marca.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="menu.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3490" topLine="123" />
-		</Cursor>
-		<Folding>
-			<Collapse line="64" />
-			<Collapse line="74" />
-			<Collapse line="107" />
-		</Folding>
-	</File>
-	<File name="modelo.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2373" topLine="18" />
-		</Cursor>
-		<Folding>
-			<Collapse line="16" />
-			<Collapse line="38" />
-			<Collapse line="63" />
-			<Collapse line="73" />
-			<Collapse line="89" />
-			<Collapse line="99" />
-		</Folding>
-	</File>
-	<File name="auto.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="155" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ingreso.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2816" topLine="120" />
-		</Cursor>
-	</File>
-	<File name="ingreso.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="329" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menu.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5559" topLine="54" />
+			<Cursor1 position="3666" topLine="13" />
 		</Cursor>
 		<Folding>
 			<Collapse line="12" />
 		</Folding>
 	</File>
-	<File name="clave.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="modelo.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="466" topLine="0" />
+			<Cursor1 position="173" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="ingreso.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1157" topLine="16" />
 		</Cursor>
 		<Folding>
-			<Collapse line="8" />
-			<Collapse line="18" />
+			<Collapse line="13" />
+			<Collapse line="17" />
+			<Collapse line="23" />
+			<Collapse line="28" />
+			<Collapse line="32" />
+			<Collapse line="36" />
 		</Folding>
 	</File>
-	<File name="clave.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clientes.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="208" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="clientes.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="692" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1299" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="marca.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="150" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="clientes.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2857" topLine="193" />
+			<Cursor1 position="6113" topLine="32" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
@@ -99,33 +77,69 @@
 			<Collapse line="38" />
 			<Collapse line="43" />
 			<Collapse line="54" />
+			<Collapse line="82" />
 			<Collapse line="230" />
 			<Collapse line="243" />
 			<Collapse line="265" />
 			<Collapse line="274" />
 			<Collapse line="294" />
 			<Collapse line="353" />
+			<Collapse line="403" />
+			<Collapse line="413" />
+			<Collapse line="430" />
 		</Folding>
 	</File>
-	<File name="configuraciones.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ingreso.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2566" topLine="9" />
+			<Cursor1 position="1130" topLine="38" />
+		</Cursor>
+	</File>
+	<File name="reportes.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1784" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="auto.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="155" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="clave.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="466" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="6" />
-			<Collapse line="25" />
-			<Collapse line="45" />
-			<Collapse line="64" />
+			<Collapse line="8" />
+			<Collapse line="18" />
 		</Folding>
 	</File>
-	<File name="fecha.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="fecha.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="518" topLine="0" />
+			<Cursor1 position="419" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="modelo.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="marca.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="499" topLine="11" />
+			<Cursor1 position="185" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="modelo.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="348" topLine="111" />
+		</Cursor>
+		<Folding>
+			<Collapse line="22" />
+			<Collapse line="44" />
+		</Folding>
+	</File>
+	<File name="clave.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="208" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="marca.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="535" topLine="23" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

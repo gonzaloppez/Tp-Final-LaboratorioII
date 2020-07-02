@@ -1,90 +1,57 @@
 #include <iostream>
-using namespace std;
-#include <SDL2/SDL.h>
 #include <stdlib.h>
+#include<stdio.h>
+#include<conio.h>
 #include <locale.h>
+#include "rlutil.h"
 #include "marca.h"
 #include "menu.h"
 #include "ingreso.h"
 #include "funciones.h"
 
-/*
-int argc, char* argv[]
-SDL_Init(SDL_INIT_EVERYTHING);
-    cout<<"Ello"<<endl;
-
-    SDL_Window* window;
-    window = SDL_CreateWindow("MyWindowTitle", SDL_WINDOWPOS_UNDEFINED,
-                              SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_RESIZABLE);
-
-    SDL_Delay(4000);
-    SDL_DestroyWindow(window);
-
-    --------------------------------
-
-     SDL_Surface* hello = NULL;
-    SDL_Window* screen = NULL;
-    int i=0;
-
-    SDL_Init(SDL_INIT_EVERYTHING);
-
-    hello = SDL_LoadBMP("foto.bmp");
-    screen = SDL_CreateWindow ( "Mi ventana de juego" , SDL_WINDOWPOS_UNDEFINED , SDL_WINDOWPOS_UNDEFINED , 640 , 480 , SDL_WINDOW_FULLSCREEN | SDL_WINDOW_OPENGL );
-
-    while (true){
-        i++;
-        SDL_CreateTexture(hello, NULL, screen, NULL);
-        SDL_Flip(screen);
-        SDL_Delay(2000);
-
-        if(i>5){
-            SDL_Quit();
-        }
 
 
-    }
-    ------------------------------------------
 
-    SDL_Surface* image = SDL_LoadBMP("foto.BMP");
-        if (image == NULL) {
-       std::cout << "IMG_Load: " << cout<<"error"<< "\n";
-        }
-
-
-*/
-
-int main(int argc, char* argv[])
+int main()
 {
 
+    presentacion();
     setlocale(LC_ALL, "Spanish");
     while(true){
     system("cls");
-
     int opcion;
-    cout<<"-MENU PRINCIPAL-"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<" -1 Ingreso al taller  "<<endl;
-    cout<<" -2 Ficha cliente  "<<endl;
-    cout<<" -3 Clientes  "<<endl;
-    cout<<" -4 Vehículos  "<<endl;
-    cout<<" -5 Reportes  "<<endl;
-    cout<<" -6 Configuraciones  "<<endl;
-    cout<<" -0 Salir  "<<endl;
-    cout<<"*************************"<<endl;
-    cout<<"Ingresar opción: ";
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(47,9);cout<<"-MENU PRINCIPAL-"<<endl;
+    rlutil::locate(42,10);cout<<"****************************"<<endl;
+    rlutil::locate(42,11);cout<<"*   1- INGRESO AL TALLER   *"<<endl;
+    rlutil::locate(42,12);cout<<"*   2- FICHA TECNICA       *"<<endl;
+    rlutil::locate(42,13);cout<<"*   3- CLIENTES            *"<<endl;
+    rlutil::locate(42,14);cout<<"*   4- VEHICULOS           *"<<endl;
+    rlutil::locate(42,15);cout<<"*   5- REPORTES            *"<<endl;
+    rlutil::locate(42,16);cout<<"*   6- CONFIGURACIONES     *"<<endl;
+    rlutil::locate(42,17);cout<<"*   0- Salir               *"<<endl;
+    rlutil::locate(42,18);cout<<"****************************"<<endl;
+    rlutil::locate(47,19);cout<<"INGRESAR OPCION: ";
     cin>>opcion;
 
 
         switch (opcion){
 
         case 1:
-            if(nuevoIngreso())
+                if(nuevoIngreso())
                 {
-                    cout<<"El registro del auto se guardo correctamente"<<endl;
-                    system("pause");
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(40,20);cout<<"El registro del auto se guardo correctamente"<<endl;
+                rlutil::anykey();
                 }else {
-                cout<<"El registro no se guardo"<<endl;
-                system("pause");
+                rlutil::setColor(rlutil::RED);
+                rlutil::locate(47,19);cout<<"REGISTRO INCORRECTO  "<<endl;
+                rlutil::locate(45,20);cout<<"El registro no se guardo"<<endl;
+                rlutil::anykey();
                 }
 break;
         case 2:
@@ -108,6 +75,11 @@ break;
         case 0:
             return 0;
         break;
+        default:
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,19);cout<<"Opción incorrecta  "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
              }
     }
 

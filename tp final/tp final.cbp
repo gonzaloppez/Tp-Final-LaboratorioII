@@ -43,17 +43,12 @@
 			<Add directory="GRAFICOS/GLUI/lib" />
 			<Add directory="GRAFICOS/GLUT/lib" />
 		</Linker>
-		<Unit filename="auto.cpp" />
-		<Unit filename="autos.h" />
-		<Unit filename="clave.cpp" />
-		<Unit filename="clave.h" />
 		<Unit filename="clientes.cpp" />
 		<Unit filename="clientes.h" />
 		<Unit filename="configuraciones.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="funciones.h" />
-		<Unit filename="imagen.h" />
 		<Unit filename="ingreso.cpp" />
 		<Unit filename="ingreso.h" />
 		<Unit filename="main.cpp" />
@@ -62,6 +57,7 @@
 		<Unit filename="menu.h" />
 		<Unit filename="modelo.cpp" />
 		<Unit filename="modelo.h" />
+		<Unit filename="reportes.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -3,10 +3,14 @@ using namespace std;
 #include <cstdio>
 #include <stdlib.h>
 #include <string.h>
+#include <fstream>
+#include <iomanip>
+#include "rlutil.h"
 #include "ingreso.h"
 #include "marca.h"
 #include "modelo.h"
 #include "fecha.h"
+
 
 
 ///SETS
@@ -63,6 +67,12 @@ char* Auto::getFalla(){
 int   Auto::getDni(){
     return dni;
 }
+char   Auto::getNombre(){
+    return nombre;
+}
+char   Auto::getApellido(){
+    return apellido;
+}
 
 float Auto::getKm(){
     return km;
@@ -72,8 +82,11 @@ float Auto::getImporte(){
 }
 
 
+
 void buscarPatente(char *pat){
+
     Auto ing;
+    int exp=0;
     system("cls");
     FILE *p;
     p = fopen("ingresos.dat","rb");
@@ -82,31 +95,56 @@ void buscarPatente(char *pat){
     {
         if(strcmp(pat,ing.getPatente())==0)
         {
+
             ing.mostrar();
         }
-
     }
-    system("pause");
+     system("pause");
      fclose(p);
-    }
+        }
+
 
 void Auto::mostrar(){
 
-
-    cout<<"MARCA: "<<marca<<endl;
-    cout<<"MODELO: "<<modelo<<endl;
-    cout<<"COMBUSTIBLE: "<<combustible<<endl;
-    cout<<"PATENTE: "<<patente<<endl;
-    cout<<"FALLA DEL AUTO: "<<falla<<endl;
     Clientes cli = getCliente();
-    cout<<"CLIENTE: "<<cli.getNombre()<<", "<<cli.getApellido()<<endl;///
-    cout<<"DNI: "<<cli.getDni()<<endl;///
-    cout<<"TELEFONO: "<<cli.getTelefono()<<endl;///
-    cout<<"KM: "<<km<<endl;
-    cout<<"IMPORTE: "<<importe<<endl;
-    cout<<"FECHA DE INGRESO AL TALLER: ";
+    cout<<endl;
+    cout<<endl;
+    cout << setw(40)<<"               ";cout << "FICHA TECNICA CLIENTE PATENTE "<<patente<< endl;
+    cout << setw(35)<<"               ";cout << "----------------------------------------------" << endl;
+    cout<<endl;
+    cout << left;
+    cout<<"                         INGRESO AL TALLER: ";
     fe.mostrar();
-    cout<<"--------------------------------------------------"<<endl;
+    cout<<endl;
+    cout << setw(25)<<"               ";
+    cout << setw(15)<<"NOMBRE: ";
+    cout << setw(15)<<"APELLIDO: ";
+    cout << setw(10)<<"DNI: ";
+    cout << setw(15)<<"TELEFONO: ";
+    cout << setw(30)<<"MAIL: "<<endl;
+
+    cout << setw(25)<<"               ";
+    cout << setw(15)<<cli.getNombre();
+    cout << setw(15)<<cli.getApellido();
+    cout << setw(10)<<cli.getDni();
+    cout << setw(15)<<cli.getTelefono();
+    cout << setw(30)<<cli.getMail();
+
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout << setw(25)<<"               ";
+    cout<<"              MARCA: "<<marca<<"          MODELO: "<<modelo<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout << setw(25)<<"               ";
+    cout<<"   COMBUSTIBLE: "<<combustible<<"                 KM: "<<km<<"                     IMPORTE: "<<importe;
+    cout<<endl;
+    cout<<endl;
+    cout<<"                         FALLA DEL AUTO: "<<falla<<endl;
+    cout<<endl;
+     cout<<"                                                                           "<<endl;
+    cout<<endl;
 
 }
 
@@ -120,11 +158,19 @@ bool Auto::guardarIngreso(){
 }
 
 bool Auto::cargarIngreso(){
+
     system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
     Modelo mod;
     Marca m;
 
-    cout<<"Ingresar Marca: ";
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(42,8);cout<<"DATOS DEL INGRESO VEHICULAR"<<endl;
+    cout<<endl;
+    rlutil::locate(47,9);cout<<"Marca : ";
     cin.ignore();
     cin.getline(marca,20);
     if(buscarMarca(marca)==false)
@@ -132,70 +178,65 @@ bool Auto::cargarIngreso(){
         return false;
         }
 
-    cout<<"Ingresar Modelo: ";
+    rlutil::locate(47,10);cout<<"Modelo: ";
     cin.getline(modelo,20);
     if(buscarModelo(modelo)==false)
         {
         return false;
         }
 
-    cout<<"Ingresar combustible: ";
+    rlutil::locate(47,11);cout<<"Combustible: ";
     cin.getline(combustible,10);
     if (combustible[0]=='\0')
     {
         return false;
     }
 
-    cout<<"Ingresar patente: ";
+    rlutil::locate(47,12);cout<<"Patente: ";
     cin.getline(patente,7);
     if (patente[0]=='\0')
     {
         return false;
     }
 
-    cout<<"Falla del auto: ";
+
+    rlutil::locate(47,13);cout<<"Falla: ";
     cin.getline(falla,50);
     if (falla[0]=='\0')
     {
         return false;
     }
-    cin.ignore();
+
 
     int pos;
-    cout<<"DNI: ";
+    rlutil::locate(47,14);cout<<"DNI: ";
     cin>>dni;
     pos = buscarPorDni(dni);
-    if (pos >= 0){
-        Clientes cli;
-        cli.leerClientesDeDisco(pos);
-        cli.mostrarClientesIngreso();
-    }else{
+    if (pos < 0){
         return false;
     }
 
-    cout<<"Ingresar cantidad de KM: ";
+    rlutil::locate(47,15);cout<<"Cantidad de KM: ";
     cin>>km;
     if (km<=0)
     {
         return false;
     }
 
-    cout<<"Ingrese importe cobrado: $";
+    rlutil::locate(47,16);cout<<"Importe cobrado: $";
     cin>>importe;
     if (importe<=0)
     {
         return false;
     }
-    system("pause");
 
-    cout<<"Fecha de ingreso: "<<endl;
+
+    rlutil::locate(47,17);cout<<"Fecha de ingreso: "<<endl;
     if(fe.cargar()==false){
         return false;
     }
     return true;
    }
-
-
 
 bool Auto::leerDeDisco(int pos){
 
@@ -213,6 +254,24 @@ bool Auto::leerDeDisco(int pos){
     return resultado;
     }
 
+bool Auto::leerDeDiscoDni(int busquedaDNI){
+
+    FILE *p;
+    p = fopen("ingresos.dat","rb");
+    if (p == NULL){
+        return false;
+    }
+    while(fread(this, sizeof(Auto), 1, p)){
+          if(busquedaDNI==getDni())
+            {
+                return true;
+            }
+        fclose(p);
+    }
+    fclose(p);
+    return false;
+    }
+
 bool nuevoIngreso(){
     Auto ing;
         if(ing.cargarIngreso()){
@@ -222,17 +281,20 @@ bool nuevoIngreso(){
         }
 }
 
-
   void buscarIngreso(){
     system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
     char pat[7];
     int pos;
-    cout << "Ingrese patente para buscar ficha: ";
+    rlutil::locate(35,8);cout << "INGRESE PATENTE PARA BUSCAR LA FICHA TECNICA: ";
     cin.ignore();
     cin.getline(pat,7);
     buscarPatente(pat);
 }
-
 
 Clientes Auto::getCliente(){
     Clientes cli;
@@ -242,9 +304,12 @@ Clientes Auto::getCliente(){
         cli.leerClientesDeDisco(pos);
     }
     else{
-
     }
     return cli;
 }
 
 
+Fecha Auto::getFecha()
+{
+    return fe;
+}

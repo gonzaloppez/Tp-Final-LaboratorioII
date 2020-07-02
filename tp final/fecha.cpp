@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <stdlib.h>
+#include "rlutil.h"
 #include <ctime>
 #include "fecha.h"
 
@@ -30,15 +31,19 @@ int Fecha::getAnio(){
 
 
 bool Fecha::cargar(){
-    cout<< "Dia: ";
+    rlutil::locate(47,18);cout<< "Dia: ";
     cin>>dia;
-    cout<< "Mes: ";
+    rlutil::locate(55,18);cout<< "Mes: ";
     cin>>mes;
-    cout<< "año: ";
+    rlutil::locate(63,18);cout<< "año: ";
     cin>>anio;
         if (validarFecha(dia,mes,anio)==true){
         return true;
-    }else{cout<<"fecha invalida"<<endl; system("pause"); return false;}
+    }else{
+        rlutil::setColor(rlutil::RED);
+        rlutil::locate(47,19);cout<<"FECHA INVALIDA"<<endl;
+        rlutil::anykey();
+        return false;}
 }
 
 void Fecha::mostrar(){

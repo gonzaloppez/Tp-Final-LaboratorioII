@@ -3,6 +3,7 @@ using namespace std;
 #include <string.h>
 #include <cstdio>
 #include <iomanip>
+#include "rlutil.h"
 #include "marca.h"
 
 void Marca::setNombre(char *_nombre){
@@ -12,25 +13,50 @@ char* Marca::getNombre(){
     return nombre;
 }
 
+void Marca::setID(char *_ID){
+    strcpy(ID,_ID);
+}
+
+char* Marca::getID(){
+    return ID;
+}
+
 ///--------------------------------------------
 
 bool Marca::cargarMarca(){
-    while(true){
-cin.ignore();
-    cout<<"Agregar Marca: ";
 
+
+    while(true){
+    system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+   /* cout<<"Ingrese ID de marca: ";
+    cin.ignore();
+    cin.getline(ID,4);*/
+
+    rlutil::locate(45,9);cout<<"AGREGAR MARCA: ";
+    rlutil::locate(40,10);cout << "-------------------------" << endl;
+
+    rlutil::locate(44,12);cout<<"NOMBRE: ";
+    cin.ignore();
     cin.getline(nombre,10);
-    if(nombre[0]!='\0'){
+        if(validarNombreApellido(nombre)){
         if (buscarMarca(nombre))
         {
-            cout<<"Marca ya existente"<<endl;
-            system("pause");
-            return false;
-        }else {return true;}
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(42,14);cout<<"Marca ya existente"<<endl;
+            rlutil::anykey();
+        }else {
+              return true;
+            }
 
         }else{
-            cout<<"Favor de colocar una marca válida"<<endl;
-            system("pause");
+            rlutil::setColor(rlutil::RED);
+           rlutil::locate(42,14); cout<<"FAVOR DE COLOCAR UNA MARCA VALIDA"<<endl;
+            rlutil::anykey();
         }
     }
 }
@@ -56,11 +82,6 @@ bool buscarMarca(char *nombreBuscado){
 
     }
 
-
-
-void Marca::mostrarMarca(){
-    cout<<nombre;
-}
 
 bool Marca::guardarEnDiscoMarca(){
     bool escribio;
@@ -116,21 +137,22 @@ bool nuevaMarca(){
 }
 
 bool listarMarca(){
-
+    system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
     Marca m;
     int i = 0;
-    system("cls");
-    cout << "Listado de Marcas" << endl;
-    cout << "------------------------" << endl;
-    cout<<endl;
-    cout << "MARCAS"<<endl;
-    cout<<endl;
-
+    rlutil::locate(48,9);cout << "LISTADO DE MARCAS" << endl;
+    rlutil::locate(45,11);cout<< "------------------------" << endl;
     while(m.leerDeDiscoMarca(i++)){
-    cout << m.getNombre()<<endl;
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(45,12+i);cout << m.getNombre()<<endl;
     }
     cin.ignore();
-    system("pause");
+    rlutil::anykey();
 
 }
 
@@ -157,34 +179,51 @@ int buscarMarcaModificar(char *nombreBuscado){
 bool modificarMarca(){
 
     system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
     char nombre[10];
-     char nombres[10];
+    char nombres[10];
     int pos;
     Marca m;
-    listarMarca();
+    while(true){
+    rlutil::setColor(rlutil::WHITE);
     cin.ignore();
-    cout << "Ingrese marca que desea modificar: ";
+    rlutil::locate(40,9);cout << "INGRESE LA MARCA QUE DESEA MODIFICAR: ";
     cin.getline(nombre,10);
-     if(buscarMarca(nombre)==false)
-        {
-        return false;
+     if(validarNombreApellido(nombre)){
+        if(buscarMarca(nombre)==false)
+            {
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(45,13);cout<<"MARCA INGRESADA NO EXISTE"<<endl;
+                    rlutil::anykey();
+
+                }else{break;}
+        }else{
+        rlutil::setColor(rlutil::RED);
+                    rlutil::locate(43,13);cout<<"FAVOR DE COLOCAR UNA MARCA VALIDA"<<endl;
+                    rlutil::anykey();
         }
+}
     pos = buscarMarcaModificar(nombre);
     if (pos >= 0){
          cin.ignore();
          while(true){
-       cout << "Ingrese la marca modificada: ";
+       rlutil::locate(40,11);cout << "INGRESE LA MODIFICACION: ";
         cin.getline(nombres,10);
-        if(nombres[0]!='\0'){
+        if(validarNombreApellido(nombres)){
                m.setNombre(nombres);
                m.guardarEnDiscoMarca(pos);
                break;
-                }else {
-                    cout<<"Marca ingresada inválida"<<endl;
+                 }else {
+                    cout<<"MARCA INGRESADA INVALIDA"<<endl;
                     system("pause");
               }
         }
         return true;
-    }
+
 }
 
+}

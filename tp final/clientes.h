@@ -1,6 +1,8 @@
 #ifndef CLIENTES_H_INCLUDED
 #define CLIENTES_H_INCLUDED
 
+void recuadro();
+
 struct Clientes{
     private:
         char nombre[15];
@@ -37,5 +39,7 @@ void listarClientes();
 void buscarCliente();
 int buscarPorDni(int);
 bool modificarCliente();
+bool validarMail(char *);
+bool validarDNI(int _dni);
 
 #endif // CLIENTES_H_INCLUDED

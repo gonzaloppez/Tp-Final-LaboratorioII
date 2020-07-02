@@ -3,19 +3,26 @@
 #include <iostream>
 using namespace std;
 
+
 #include <stdlib.h>
 
+void recuadro();
+bool validarNombreApellido(char*);
 
 class Marca{
     private:
     char nombre[10];
+    char ID[4];
+
 
     public:
         void setNombre(char *);
         char* getNombre();
 
+        void setID(char *);
+        char* getID();
+
         bool cargarMarca();
-        void mostrarMarca();
         bool guardarEnDiscoMarca();
         bool guardarEnDiscoMarca(int);
         bool leerDeDiscoMarca(int);

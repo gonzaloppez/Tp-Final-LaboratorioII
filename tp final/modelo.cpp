@@ -2,6 +2,7 @@
 using namespace std;
 #include <string.h>
 #include <cstdio>
+#include "rlutil.h"
 #include <iomanip>
 #include "modelo.h"
 
@@ -11,26 +12,42 @@ void Modelo::setNombre(char *_nombre){
 char* Modelo::getNombre(){
     return nombre;
 }
+
+void Modelo::setID(char *_ID){
+    strcpy(_ID,ID);
+}
+char* Modelo::getID(){
+    return ID;
+}
 ///--------------------------------------------
 
 bool Modelo::cargarModelo(){
     while(true){
-cin.ignore();
-    cout<<"Agregar Modelo: ";
+    system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(45,9);cout<<"AGREGAR MODELO: ";
+    rlutil::locate(40,10);cout << "-------------------------" << endl;
+    rlutil::locate(44,12);cout<<"NOMBRE: ";
+    cin.ignore();
     cin.getline(nombre,10);
-    if(nombre[0]!='\0'){
+        if(validarNombreApellido(nombre)){
         if (buscarModelo(nombre))
         {
-            cout<<"Modelo ya existente"<<endl;
-            system("pause");
-            return false;
-        }else {return true;}
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(42,14);cout<<"MODELO EXISTENTE"<<endl;
+            rlutil::anykey();
+        }else {
+              return true;
+            }
 
-
-}
-else{
-            cout<<"Favor de colocar un modelo válido"<<endl;
-            system("pause");
+        }else{
+            rlutil::setColor(rlutil::RED);
+           rlutil::locate(42,14); cout<<"FAVOR DE COLOCAR UN MODELO VALIDO"<<endl;
+            rlutil::anykey();
         }
     }
 }
@@ -110,26 +127,25 @@ bool nuevoModelo(){
 }
 
 bool listarModelo(){
-
+    system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
     Modelo mod;
     int i = 0;
-    system("cls");
-    cout << "Listado de Modelos" << endl;
-    cout << "------------------------" << endl;
-    cout<<endl;
-    cout << "MODELOS"<<endl;
-    cout<<endl;
+    rlutil::locate(48,9);cout << "LISTADO DE MODELOS" << endl;
+    rlutil::locate(45,11);cout<< "------------------------" << endl;
 
     while(mod.leerDeDiscoModelo(i++)){
-    cout << mod.getNombre()<<endl;
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(45,12+i);cout << mod.getNombre()<<endl;
     }
     cin.ignore();
-    system("pause");
+    rlutil::anykey();
 
 }
-
-
-
 
 
 int buscarModeloModificar(char *nombreBuscado){
@@ -154,41 +170,55 @@ int buscarModeloModificar(char *nombreBuscado){
 }
 
 
-
-
 bool modificarModelo(){
-
     system("cls");
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
     char nombre[10];
     char nombres[10];
     int pos;
     Modelo mod;
-    listarModelo();
+    while(true){
+    rlutil::setColor(rlutil::WHITE);
     cin.ignore();
-    cout << "Ingrese modelo que desea modificar: ";
+    rlutil::locate(40,9);cout << "INGRESE EL MODELO QUE DESEA MODIFICAR: ";
     cin.getline(nombre,10);
+    if(validarNombreApellido(nombre)){
      if(buscarModelo(nombre)==false)
         {
-        return false;
+         rlutil::setColor(rlutil::RED);
+        rlutil::locate(45,13);cout<<"MODELO INGRESADA NO EXISTE"<<endl;
+        rlutil::anykey();
+        }else{break;}
+    }else{
+        rlutil::setColor(rlutil::RED);
+        rlutil::locate(43,13);cout<<"FAVOR DE COLOCAR UN MODELO VALIDO"<<endl;
+        rlutil::anykey();
         }
+}
     pos = buscarModeloModificar(nombre);
     if (pos >= 0){
          cin.ignore();
          while(true){
-       cout << "Ingrese el modelo modificado: ";
+       rlutil::locate(40,11);cout << "INGRESE MODIFICACION: ";
         cin.getline(nombres,10);
-        if(nombres[0]!='\0'){
+        if(validarNombreApellido(nombres)){
                mod.setNombre(nombres);
                mod.guardarEnDiscoModelo(pos);
                break;
                 }else {
-                    cout<<"Modelo ingresado invalido"<<endl;
+                    cout<<"MODELO INGRESADO INVALIDO"<<endl;
                     system("pause");
               }
         }
+
         return true;
     }
-}
+    }
+
 
 
 

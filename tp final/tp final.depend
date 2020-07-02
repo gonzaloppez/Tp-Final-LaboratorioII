@@ -5,55 +5,61 @@
 
 1591810524 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\autos.h
 
-1593470290 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\main.cpp
+1593728060 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\main.cpp
 	<iostream>
-	<SDL2/SDL.h>
 	<stdlib.h>
+	<stdio.h>
+	<conio.h>
 	<locale.h>
+	"rlutil.h"
 	"marca.h"
 	"menu.h"
 	"ingreso.h"
 	"funciones.h"
 
-1593442987 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.h
+1593643933 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.h
 	<iostream>
 	<stdlib.h>
 
-1593462161 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.cpp
+1593649372 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\marca.cpp
 	<iostream>
 	<string.h>
 	<cstdio>
 	<iomanip>
+	"rlutil.h"
 	"marca.h"
 
-1593529486 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\menu.h
+1593728060 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\menu.h
 	<iostream>
 	<stdlib.h>
 	"ingreso.h"
 	"marca.h"
-	"clave.h"
 	"clientes.h"
 	"modelo.h"
 	"configuraciones.h"
 	"reportes.h"
+	"funciones.h"
 
-1593544107 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.h
+1593714179 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.h
 	"marca.h"
 	"modelo.h"
 	"clientes.h"
 	"fecha.h"
 
-1593544107 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.cpp
+1593714754 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\ingreso.cpp
 	<iostream>
 	<cstdio>
 	<stdlib.h>
 	<string.h>
+	<fstream>
+	<iomanip>
+	"rlutil.h"
 	"ingreso.h"
 	"marca.h"
 	"modelo.h"
 	"fecha.h"
 
-1591859363 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\funciones.h
+1593726738 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\funciones.h
 	<string.h>
 
 1591898962 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clave.h
@@ -65,36 +71,39 @@
 	<stdlib.h>
 	"clave.h"
 
-1593531770 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\fecha.cpp
+1593628486 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\fecha.cpp
 	<iostream>
 	<stdlib.h>
+	"rlutil.h"
 	<ctime>
 	"fecha.h"
 
 1593530049 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\fecha.h
 
-1593121562 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.h
+1593642279 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.h
 
-1593528598 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.cpp
+1593642787 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\clientes.cpp
 	<iostream>
+	"rlutil.h"
 	<cstdio>
 	<stdlib.h>
 	<string.h>
 	<iomanip>
 	"clientes.h"
 
-1593462289 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\modelo.h
+1593644842 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\modelo.h
 	<iostream>
 	<stdlib.h>
 
-1593469219 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\modelo.cpp
+1593649575 source:c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\modelo.cpp
 	<iostream>
 	<string.h>
 	<cstdio>
+	"rlutil.h"
 	<iomanip>
 	"modelo.h"
 
-1593047991 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\configuraciones.h
+1593643362 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\configuraciones.h
 	<stdlib.h>
 	<cstdio>
 
@@ -452,7 +461,25 @@
 	"begin_code.h"
 	"close_code.h"
 
-1593544130 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\reportes.h
+1593716376 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\reportes.h
+	"rlutil.h"
+	"funciones.h"
 	<stdlib.h>
 	"ingreso.h"
+	"fecha.h"
+	"clientes.h"
+
+1592835046 c:\users\glopez8\desktop\gonza\utn temp 2\laboratorio\tp final\tp-final-laboratorioii\tp final\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 

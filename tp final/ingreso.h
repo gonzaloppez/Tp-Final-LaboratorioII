@@ -5,6 +5,7 @@
 #include "clientes.h"
 #include "fecha.h"
 
+void recuadro();
 
 class Auto{
     private:
@@ -14,6 +15,8 @@ class Auto{
     char patente[7];
     char falla[50];
     int dni;
+    char nombre;
+    char apellido;
     Clientes cli;
     float km;
     float importe;
@@ -35,9 +38,11 @@ class Auto{
         char* getCombustible();
         char* getPatente();
         char* getFalla();
-
+        Fecha getFecha();
 
         int getDni();
+        char getNombre();
+        char getApellido();
         float getKm();
         float getImporte();
         Clientes getCliente();
@@ -45,12 +50,14 @@ class Auto{
         bool guardarIngreso();
         void mostrar();
         bool leerDeDisco(int);
-
+        bool leerDeDiscoDni(int);
 
 };
 
 bool nuevoIngreso();
 void buscarIngreso();
 void buscarPatente(char*);
+
+
 
 #endif // INGRESO_H_INCLUDED

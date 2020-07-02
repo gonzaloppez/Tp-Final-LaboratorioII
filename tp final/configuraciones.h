@@ -18,8 +18,9 @@ void copiaDeSeguridadIngreso(Auto *ing){
     }
     fclose(pIngreso);
     fclose(pAuxIngreso);
-    cout<<"Se realizo el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se realizo el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -37,9 +38,9 @@ void restaurarBkpIngreso(Auto *ing){
     }
     fclose(pIngreso);
     fclose(pAuxIngreso);
-
-    cout<<"Se restauro el backup correspondiente"<<endl;
-    system("pause");
+rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se restauro el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -57,8 +58,9 @@ void copiaDeSeguridadMarca(Marca *m){
     }
     fclose(pMarca);
     fclose(pAuxMarca);
-    cout<<"Se realizo el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se realizo el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -76,9 +78,9 @@ void restaurarBkpMarca(Marca *m){
     }
     fclose(pMarca);
     fclose(pAuxMarca);
-
-    cout<<"Se restauro el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se restauro el backup correspondiente"<<endl;
+    rlutil::anykey();
 }
 
 void copiaDeSeguridadModelo(Modelo *mod){
@@ -95,8 +97,9 @@ void copiaDeSeguridadModelo(Modelo *mod){
     }
     fclose(pModelo);
     fclose(pAuxModelo);
-    cout<<"Se realizo el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+     rlutil::locate(40,20);cout<<"Se realizo el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -114,9 +117,9 @@ void restaurarBkpModelo(Modelo *mod){
     }
     fclose(pModelo);
     fclose(pAuxModelo);
-
-    cout<<"Se restauro el backup correspondiente"<<endl;
-    system("pause");
+rlutil::setColor(rlutil::GREEN);
+     rlutil::locate(40,20);cout<<"Se restauro el backup correspondiente"<<endl;
+    rlutil::anykey();
 }
 
 void copiaDeSeguridadClientes(Clientes *cli){
@@ -133,8 +136,9 @@ void copiaDeSeguridadClientes(Clientes *cli){
     }
     fclose(pCliente);
     fclose(pAuxCliente);
-    cout<<"Se realizo el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se realizo el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -152,9 +156,9 @@ void restaurarBkpCliente(Clientes *cli){
     }
     fclose(pCliente);
     fclose(pAuxCliente);
-
-    cout<<"Se restauro el backup correspondiente"<<endl;
-    system("pause");
+rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se restauro el backup correspondiente"<<endl;
+    rlutil::anykey();
 
 }
 
@@ -204,9 +208,9 @@ void copiaDeSeguridad(Auto *ing,Marca *m,Modelo *mod,Clientes *cli){
     fclose(pAuxModelo);
     fclose(pCliente);
     fclose(pAuxCliente);
-    cout<<"Se realizo el backup correspondiente"<<endl;
-    system("pause");
-
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se realizo el backup correspondiente"<<endl;
+    rlutil::anykey();
 }
 
 void restaurarBkp(Auto *ing,Marca *m,Modelo *mod,Clientes *cli){
@@ -251,8 +255,8 @@ void restaurarBkp(Auto *ing,Marca *m,Modelo *mod,Clientes *cli){
     fclose(pAuxModelo);
     fclose(pCliente);
     fclose(pAuxCliente);
-
-    cout<<"Se restauro el backup correspondiente"<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(40,20);cout<<"Se restauro el backup correspondiente"<<endl;
+    rlutil::anykey();
 }
 #endif // CONFIGURACIONES_H_INCLUDED

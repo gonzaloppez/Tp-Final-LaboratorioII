@@ -9,10 +9,13 @@ using namespace std;
 class Modelo{
     private:
     char nombre[10];
+    char ID[3];
 
     public:
         void  setNombre(char *);
         char* getNombre();
+        void  setID(char *);
+        char* getID();
 
         bool cargarModelo();
         void mostrarModelo();
@@ -27,6 +30,8 @@ bool listarModelo();
 bool modificarModelo();
 bool buscarModelo(char *);
 int buscarModeloModificar(char *);
+void recuadro();
+bool validarNombreApellido(char*);
 
 
 #endif // MODELO_H_INCLUDED

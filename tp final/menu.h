@@ -5,25 +5,29 @@ using namespace std;
 #include <stdlib.h>
 #include "ingreso.h"
 #include "marca.h"
-#include "clave.h"
 #include "clientes.h"
 #include "modelo.h"
 #include "configuraciones.h"
 #include "reportes.h"
+#include "funciones.h"
 
 void menuConfiguracion(){
 
     while(true){
     system("cls");
     int opcionConf;
-    cout<<"-MENU CONFIGURACION-"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<" -1 Realizar Backup  "<<endl;
-    cout<<" -2 Restaurar backup  "<<endl;
-    cout<<" -3 Generar contraseña "<<endl;
-    cout<<" -0 Salir"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<"Ingrese una opcion: ";
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(47,9);cout<<"-MENU CLIENTES-"<<endl;
+    rlutil::locate(42,10);cout<<"****************************"<<endl;
+    rlutil::locate(42,11);cout<<"*   1- Realizar backup     *"<<endl;
+    rlutil::locate(42,12);cout<<"*   2- Restaurar backup    *"<<endl;
+    rlutil::locate(42,13);cout<<"*   0- Salir               *"<<endl;
+    rlutil::locate(42,14);cout<<"****************************"<<endl;
+    rlutil::locate(47,15);cout<<"Ingresar opción: ";
     cin>>opcionConf;
 
     switch(opcionConf)
@@ -34,16 +38,21 @@ void menuConfiguracion(){
             while(true){
             system("cls");
             int opcbkp;
-            cout<<"-Realizar backup-"<<endl;
-            cout<<"*************************"<<endl;
-            cout<<" -1 Ingresos al taller  "<<endl;
-            cout<<" -2 Marcas"<<endl;
-            cout<<" -3 Modelos"<<endl;
-            cout<<" -4 Clientes"<<endl;
-            cout<<" -5 Todos los archivos"<<endl;
-            cout<<" -6 Volver al menu"<<endl;
-            cout<<"*************************"<<endl;
-            cout<<"Ingrese una opcion: ";
+            rlutil::setBackgroundColor(rlutil::RED);
+            rlutil::setColor(rlutil::BLACK);
+            recuadro();
+            rlutil::setBackgroundColor(rlutil::BLACK);
+            rlutil::setColor(rlutil::WHITE);
+            rlutil::locate(47,9);cout<<"-MENU BAKCUP-"<<endl;
+            rlutil::locate(42,10);cout<<"****************************"<<endl;
+            rlutil::locate(42,11);cout<<"*   1- Ingresos al taller  *"<<endl;
+            rlutil::locate(42,12);cout<<"*   2- Marcas              *"<<endl;
+            rlutil::locate(42,13);cout<<"*   3- Modelos             *"<<endl;
+            rlutil::locate(42,14);cout<<"*   4- Clientes            *"<<endl;
+            rlutil::locate(42,15);cout<<"*   5- Todos los archivos  *"<<endl;
+            rlutil::locate(42,16);cout<<"*   0- Volver              *"<<endl;
+            rlutil::locate(42,17);cout<<"****************************"<<endl;
+            rlutil::locate(47,18);cout<<"Ingresar opción: ";
             cin>>opcbkp;
             switch(opcbkp){
             case 1:
@@ -72,9 +81,14 @@ void menuConfiguracion(){
                 copiaDeSeguridad(&ing,&m,&mod,&cli);
                 }
                 break;
-            case 6:
+            case 0:
                 return;
                 break;
+                    default:
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,18);cout<<"Opción incorrecta   "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
                 }
                 }
 
@@ -84,16 +98,21 @@ void menuConfiguracion(){
         {
             system("cls");
             int opcRes;
-            cout<<"-Restaurar backup-"<<endl;
-            cout<<"*************************"<<endl;
-            cout<<" -1 Ingresos al taller"<<endl;
-            cout<<" -2 Marcas"<<endl;
-            cout<<" -3 Modelos"<<endl;
-            cout<<" -4 Clientes "<<endl;
-            cout<<" -5 Todos los archivos"<<endl;
-            cout<<" -6 Volver al menu anterior"<<endl;
-            cout<<"*************************"<<endl;
-            cout<<"Ingrese una opcion: ";
+            rlutil::setBackgroundColor(rlutil::RED);
+            rlutil::setColor(rlutil::BLACK);
+            recuadro();
+            rlutil::setBackgroundColor(rlutil::BLACK);
+            rlutil::setColor(rlutil::WHITE);
+            rlutil::locate(47,9);cout<<"-MENU RESTAURACION-"<<endl;
+            rlutil::locate(42,10);cout<<"****************************"<<endl;
+            rlutil::locate(42,11);cout<<"*   1- Ingresos al taller  *"<<endl;
+            rlutil::locate(42,12);cout<<"*   2- Marcas              *"<<endl;
+            rlutil::locate(42,13);cout<<"*   3- Modelos             *"<<endl;
+            rlutil::locate(42,14);cout<<"*   4- Clientes            *"<<endl;
+            rlutil::locate(42,15);cout<<"*   5- Todos los archivos  *"<<endl;
+            rlutil::locate(42,16);cout<<"*   0- Volver              *"<<endl;
+            rlutil::locate(42,17);cout<<"****************************"<<endl;
+            rlutil::locate(47,18);cout<<"Ingresar opción: ";
             cin>>opcRes;
             switch(opcRes){
             case 1:
@@ -120,34 +139,28 @@ void menuConfiguracion(){
                 restaurarBkp(&ing,&m,&mod,&cli);
                 }
                 break;
-            case 6:
+            case 0:
                 return;
                 break;
+            default:
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,18);cout<<"Opción incorrecta   "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
             }
 
 
             }
 
             break;
-        case 3:
-            Clave c;
-            if(c.establecerClave()==true)
-            {
-
-                if(c.cambiarClave())
-                {
-                  cout<<"La clave ha sido modificada y guardada con exito"<<endl;
-                    system("pause");
-                }else {
-                cout<<"La clave no ha sido modificada"<<endl;
-                system("pause");
-                }
-                }
-
-            break;
-        case 0:
+         case 0:
             return;
             break;
+        default:
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,15);cout<<"Opción incorrecta   "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
 }
 }
 }
@@ -157,40 +170,49 @@ void menuVehiculo(){
 while(true){
     system("cls");
     int opc;
-    cout<<"-MENU Vehículos-"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<" -1 Agregar Marca  "<<endl;
-    cout<<" -2 Agregar Modelo  "<<endl;
-    cout<<" -3 Ver marcas   "<<endl;
-    cout<<" -4 Ver modelos   "<<endl;
-    cout<<" -5 Modificar marca  "<<endl;
-    cout<<" -6 Modificar modelos   "<<endl;
-    cout<<" -0 Salir  "<<endl;
-    cout<<"*************************"<<endl;
-    cout<<"Ingrese una opcion: ";
-
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(47,9);cout<<"-MENU AUTO-"<<endl;
+    rlutil::locate(42,10);cout<<"****************************"<<endl;
+    rlutil::locate(42,11);cout<<"*   1- Agregar marca       *"<<endl;
+    rlutil::locate(42,12);cout<<"*   2- Agregar modelo      *"<<endl;
+    rlutil::locate(42,13);cout<<"*   3- Ver marcas          *"<<endl;
+    rlutil::locate(42,14);cout<<"*   4- Ver modelos         *"<<endl;
+    rlutil::locate(42,15);cout<<"*   5- Modificar marca     *"<<endl;
+    rlutil::locate(42,16);cout<<"*   6- Modificar modelo    *"<<endl;
+    rlutil::locate(42,17);cout<<"*   0- Volver              *"<<endl;
+    rlutil::locate(42,18);cout<<"****************************"<<endl;
+    rlutil::locate(47,19);cout<<"Ingresar opción: ";
     cin>>opc;
+
 
        switch(opc){
 
         case 1:
              if(nuevaMarca())
                 {
-                    cout<<"La marca se guardo correctamente"<<endl;
-                    system("pause");
+                    rlutil::setColor(rlutil::GREEN);
+                    rlutil::locate(38,14);cout<<"LA MARCA SE GUARDO CORRECTAMENTE"<<endl;
+                    rlutil::anykey();
                 }else {
-                cout<<"La marca no pudo guardarse"<<endl;
-                system("pause");
+                    rlutil::setColor(rlutil::RED);
+                rlutil::locate(40,14);cout<<"LA MARCA NO PUDO GUARDARSE"<<endl;
+                rlutil::anykey();
                 }
             break;
         case 2:
             if(nuevoModelo())
                 {
-                    cout<<"El modelo se guardo correctamente"<<endl;
-                    system("pause");
+                     rlutil::setColor(rlutil::GREEN);
+                    rlutil::locate(38,14);cout<<"EL MODELO SE GUARDO CORRECTAMENTE"<<endl;
+                    rlutil::anykey();
                 }else {
-                cout<<"El modelo no pudo guardarse"<<endl;
-                system("pause");
+                    rlutil::setColor(rlutil::GREEN);
+                rlutil::locate(38,14);cout<<"EL MODELO NO PUDO GUARDARSE"<<endl;
+                rlutil::anykey();
                 }
             break;
         case 3:
@@ -202,27 +224,35 @@ while(true){
         case 5:
              if(modificarMarca()==true)
                 {
-                 cout<<"La marca se modifico correctamente"<<endl;
-                 system("pause");
+                rlutil::setColor(rlutil::GREEN);
+                 rlutil::locate(40,13);cout<<" LA MARCA SE MODIFICO CORRECTAMENTE       "<<endl;
+                  rlutil::anykey();
                 }else {
-                cout<<"La marca no pudo modificarse"<<endl;
-                 system("pause");
+                    rlutil::setColor(rlutil::RED);
+                rlutil::locate(43,14);cout<<"LA MARCA NO PUDO MODIFICARSE"<<endl;
+                  rlutil::anykey();
                 }
             break;
         case 6:
              if(modificarModelo()==true)
                 {
-                 cout<<"El modelo se modifico correctamente"<<endl;
-                 system("pause");
+                 rlutil::setColor(rlutil::GREEN);
+                 rlutil::locate(40,13);cout<<"EL MODELO SE MODIFICO CORRECTAMENTE       "<<endl;
+                 rlutil::anykey();
                 }else{
-                cout<<"El modelo no pudo modificarse"<<endl;
-                 system("pause");
+                     rlutil::setColor(rlutil::GREEN);
+                rlutil::locate(40,13);cout<<"EL MODELO NO PUDO MODIFICARSE"<<endl;
+                 rlutil::anykey();
                 }
             break;
-
         case 0:
-            return;
+            return ;
             break;
+        default:
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,19);cout<<"Opción incorrecta   "<<endl;
+            rlutil::setColor(rlutil::BLACK);
+
     }
 }
 }
@@ -232,15 +262,20 @@ void menuClientes(){
 while(true){
     system("cls");
     int opc;
-    cout<<"-MENU CLIENTES-"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<" -1 Agregar Clientes  "<<endl;
-    cout<<" -2 Buscar Clientes  "<<endl;
-    cout<<" -3 Ver todos los clientes"<<endl;
-    cout<<" -4 Editar cliente"<<endl;
-    cout<<" -0 Salir  "<<endl;
-    cout<<"*************************"<<endl;
-    cout<<"Ingrese una opción: ";
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(47,9);cout<<"-MENU CLIENTES-"<<endl;
+    rlutil::locate(42,10);cout<<"****************************"<<endl;
+    rlutil::locate(42,11);cout<<"*   1- Agregar clientes    *"<<endl;
+    rlutil::locate(42,12);cout<<"*   2- Buscar clientes     *"<<endl;
+    rlutil::locate(42,13);cout<<"*   3- Ver clientes        *"<<endl;
+    rlutil::locate(42,14);cout<<"*   4- Editar cliente      *"<<endl;
+    rlutil::locate(42,15);cout<<"*   0- Volver              *"<<endl;
+    rlutil::locate(42,16);cout<<"****************************"<<endl;
+    rlutil::locate(47,17);cout<<"Ingresar opción: ";
 
     cin>>opc;
 
@@ -249,14 +284,19 @@ while(true){
         case 1:
             if(nuevoCliente())
                 {
-                    cout<<"El cliente se guardo correctamente"<<endl;
-                    system("pause");
+                rlutil::setBackgroundColor(rlutil::BLACK);
+                rlutil::setColor(rlutil::WHITE);
+                 rlutil::locate(38,15);cout<<"El registro de cliente se guardo correctamente "<<endl;
+                  rlutil::anykey();
                 }else {
-                cout<<"El cliente no se guardo"<<endl;
-                system("pause");
+
+                rlutil::setColor(rlutil::RED);
+                rlutil::locate(39,15);cout<<"El cliente no se guardo"<<endl;
+                rlutil::anykey();
                 }
             break;
         case 2:
+
             buscarCliente();
             break;
         case 3:
@@ -265,16 +305,23 @@ while(true){
         case 4:
             if(modificarCliente()==true)
                 {
-                cout<<"El cliente se modifico correctamente"<<endl;
-                    system("pause");
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(40,32);cout<<"CLIENTE MODIFICADO CON EXITO"<<endl;
+                    rlutil::anykey();
                 }else {
-                cout<<"El cliente no pudo ser modificado"<<endl;
-                    system("pause");
+                    rlutil::setColor(rlutil::RED);
+                rlutil::locate(40,32);cout<<"NO SE MODIFICO CLIENTE"<<endl;
+                    rlutil::anykey();
                 }
             break;
         case 0:
             return;
             break;
+        default:
+                rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,17);cout<<"Opción incorrecta  "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
     }
 
 }
@@ -286,14 +333,20 @@ void menuReportes(){
 while(true){
     system("cls");
     int opc;
-    cout<<"-MENU REPORTES-"<<endl;
-    cout<<"*************************"<<endl;
-    cout<<" -1 Recaudacion Anual  "<<endl;
-    cout<<" -2 Recaudacion por cliente"<<endl;
-    cout<<" -3 Cantidad de autos ingresados por fecha "<<endl;
-    cout<<" -0 Salir  "<<endl;
-    cout<<"*************************"<<endl;
-    cout<<"Ingrese una opcion: ";
+    rlutil::setBackgroundColor(rlutil::RED);
+    rlutil::setColor(rlutil::BLACK);
+    recuadro();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(50,9);cout<<"-MENU REPORTES-"<<endl;
+    rlutil::locate(42,10);cout<<"********************************"<<endl;
+    rlutil::locate(42,11);cout<<"*   1- Recaudación anual       *"<<endl;
+    rlutil::locate(42,12);cout<<"*   2- Recaudación por cliente *"<<endl;
+    rlutil::locate(42,13);cout<<"*   3- Recaudación por fecha   *"<<endl;
+    rlutil::locate(42,14);cout<<"*   4- Cantidad de ingresos    *"<<endl;
+    rlutil::locate(42,15);cout<<"*   5- Volver                  *"<<endl;
+    rlutil::locate(42,16);cout<<"********************************"<<endl;
+    rlutil::locate(47,17);cout<<"Ingresar opción: ";
 
     cin>>opc;
 
@@ -303,12 +356,22 @@ while(true){
             recaudacionAnual();
             break;
         case 2:
+            recaudacionCliente();
             break;
         case 3:
+            recaudacionPorFecha();
+            break;
+        case 4:
+            autosIngresados();
             break;
         case 0:
             return;
             break;
+        default:
+                rlutil::setColor(rlutil::RED);
+            rlutil::locate(47,17);cout<<"Opción incorrecta  "<<endl;
+            rlutil::anykey();
+            rlutil::setColor(rlutil::BLACK);
     }
 
 }
